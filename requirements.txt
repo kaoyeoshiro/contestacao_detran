@@ -1,0 +1,8 @@
+Flask
+Flask-Session
+Flask-CORS
+google-generativeai
+PyMuPDF
+Werkzeug
+python-dotenv 
+# (python-dotenv é opcional se você sempre define variáveis de ambiente manualmente, mas é uma boa prática)
