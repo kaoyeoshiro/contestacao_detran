@@ -98,7 +98,11 @@ const ResultScreen = ({
       params.append('action', 'ajustar_minuta');
       params.append('instrucoes_ajuste', ajusteInstrucoes);
 
-      const response = await axios.post('http://localhost:5000/', params); 
+      const response = await axios.post(
+        'http://localhost:5000/',
+        params,
+        { withCredentials: true }
+      );
       
       onMinutaAdjusted(response.data); 
       if(response.data.success) {

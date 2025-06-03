@@ -61,9 +61,14 @@ const UploadScreen = ({ onMinutaResponse, setIsLoading, isLoading, setError }) =
     formData.append('action', 'upload_pdfs'); // O backend espera esta ação
 
     try {
-      const response = await axios.post('http://localhost:5000/', formData, { 
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      const response = await axios.post(
+        'http://localhost:5000/',
+        formData,
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+          withCredentials: true,
+        }
+      );
       onMinutaResponse(response.data); 
     } catch (err) {
       console.error("Erro no upload/geração da minuta:", err);

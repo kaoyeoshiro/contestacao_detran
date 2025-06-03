@@ -31,7 +31,8 @@ logger = logging.getLogger(__name__)
 
 # --- Configuração Inicial ---
 app = Flask(__name__)
-CORS(app)  # Habilita CORS para todas as rotas em desenvolvimento
+# Permite o envio de cookies de sessão para clientes frontend
+CORS(app, supports_credentials=True)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', os.urandom(32)) # Importante para assinar o cookie de ID
 
 # --- Configuração do Flask-Session (Sessões no Lado do Servidor) ---
