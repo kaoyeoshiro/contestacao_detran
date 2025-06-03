@@ -241,7 +241,7 @@ Elabore pedidos **abrangentes e fundamentados**:
 - Títulos e subtítulos claramente hierarquizados
 - Numeração sequencial dos argumentos principais
 - Citações em formatação adequada
-- Referencias bibliográficas completas
+- Referências bibliográficas completas
 - Linguagem jurídica formal, técnica e erudita
 
 ### **CONTROLE DE QUALIDADE:**
