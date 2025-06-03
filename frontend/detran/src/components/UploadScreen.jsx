@@ -3,6 +3,9 @@ import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios'; // Para chamadas HTTP
 
+// URL base da API definida via variável de ambiente do Vite
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+
 // Ícone de Upload (SVG Tailwind-friendly)
 const UploadIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mx-auto h-16 w-16 text-gray-500 group-hover:text-pge-ciano transition-colors">
@@ -61,14 +64,7 @@ const UploadScreen = ({ onMinutaResponse, setIsLoading, isLoading, setError }) =
     formData.append('action', 'upload_pdfs'); // O backend espera esta ação
 
     try {
-      const response = await axios.post(
-        'http://localhost:5000/',
-        formData,
-        {
-          headers: { 'Content-Type': 'multipart/form-data' },
-          withCredentials: true,
-        }
-      );
+
       onMinutaResponse(response.data); 
     } catch (err) {
       console.error("Erro no upload/geração da minuta:", err);

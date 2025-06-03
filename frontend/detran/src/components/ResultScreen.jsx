@@ -1,6 +1,9 @@
 // src/components/ResultScreen.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+// URL base da API definida via variável de ambiente do Vite
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 import { Markup } from 'interweave'; // Para renderizar HTML de forma segura
 
 // FUNÇÃO LOCAL PARA ESCAPAR HTML BÁSICO
@@ -98,11 +101,6 @@ const ResultScreen = ({
       params.append('action', 'ajustar_minuta');
       params.append('instrucoes_ajuste', ajusteInstrucoes);
 
-      const response = await axios.post(
-        'http://localhost:5000/',
-        params,
-        { withCredentials: true }
-      );
       
       onMinutaAdjusted(response.data); 
       if(response.data.success) {

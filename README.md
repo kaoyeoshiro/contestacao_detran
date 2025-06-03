@@ -83,6 +83,8 @@ O projeto é dividido em duas pastas principais:
     # ou, se você usa Yarn:
     # yarn install
     ```
+3.  **Configure a URL do backend para o Vite:**
+    Copie o arquivo `.env.example` para `.env` dentro da pasta `frontend` e ajuste o valor de `VITE_API_BASE_URL` caso o endereço do backend seja diferente de `http://localhost:5000`.
 
 ## ▶️ Executando a Aplicação
 
@@ -94,6 +96,7 @@ Você precisará de dois terminais abertos para rodar o backend e o frontend sim
         python contestacao.py
         ```
     * O backend estará rodando (por padrão) em `http://localhost:5000`.
+      Defina essa URL em `VITE_API_BASE_URL` caso utilize outro endereço.
 
 2.  **Inicie o Servidor Frontend (React/Vite):**
     * No outro terminal, na pasta `frontend/`:
