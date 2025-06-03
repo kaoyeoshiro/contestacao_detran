@@ -1,9 +1,9 @@
 // src/components/Layout.jsx
 import React from 'react';
 
-// Assumindo que 'logo-pge-branco.png' está na pasta 'public' do seu projeto Vite.
-// Se você moveu para 'src/assets', o import seria: import logoPgeUrl from '../assets/logo-pge-branco.png';
-const logoPgeUrl = '/logo-pge-branco.png'; // Caminho relativo à pasta 'public'
+// Ajuste o caminho conforme a localização do arquivo de logo.
+// Por padrão espera-se que 'logo-pge-branco.png' esteja em 'frontend/detran/public/'.
+const logoPgeUrl = '/logo-pge-branco.png';
 
 const Layout = ({ children, onNewAnalysis }) => {
   return (

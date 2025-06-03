@@ -101,7 +101,6 @@ const ResultScreen = ({
       params.append('action', 'ajustar_minuta');
       params.append('instrucoes_ajuste', ajusteInstrucoes);
 
-      const response = await axios.post(`${API_BASE_URL}/`, params);
       
       onMinutaAdjusted(response.data); 
       if(response.data.success) {

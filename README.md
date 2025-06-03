@@ -113,7 +113,9 @@ Você precisará de dois terminais abertos para rodar o backend e o frontend sim
 ## 🎨 Design e Estilo
 * O frontend utiliza um tema escuro inspirado na referência visual fornecida.
 * As cores institucionais da PGE-MS (Azul `#294964`, Laranja `#F58634`, Ciano `#51A8B1`) são usadas como acentos.
-* O logo da PGE-MS (versão branca) é exibido no header.
+* O logo da PGE-MS (versão branca) é exibido no header. Certifique-se de que o arquivo
+  `logo-pge-branco.png` esteja presente em `frontend/detran/public/` ou ajuste o
+  caminho definido no componente `Layout.jsx`.
 * Fontes: Inter (corpo) e Poppins (títulos).
 
 ## 🔮 Próximos Passos / Melhorias Futuras (Sugestões)
