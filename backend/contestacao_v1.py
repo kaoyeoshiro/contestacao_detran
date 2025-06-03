@@ -407,7 +407,6 @@ class HTMLGenerator: # Mantida
             html_display += f"""
             <div class="section adjust-section"><h2>3. 🔧 Solicitar Ajustes na Minuta</h2>
             <form method="POST" action="/"><input type="hidden" name="action" value="ajustar_minuta">
-            {''''''}
             <label for="instrucoes_ajuste">💡 Instruções para ajuste:</label>
             <textarea name="instrucoes_ajuste" rows="5" placeholder="Ex: Reforce argumento X, adicione jurisprudência Y..."></textarea>
             <input type="submit" value="🔄 Refazer Minuta com Ajustes" class="btn" style="margin-top: 20px;"></form></div>"""

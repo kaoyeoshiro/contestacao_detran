@@ -64,8 +64,15 @@ const UploadScreen = ({ onMinutaResponse, setIsLoading, isLoading, setError }) =
     formData.append('action', 'upload_pdfs'); // O backend espera esta ação
 
     try {
-
-      onMinutaResponse(response.data); 
+      const response = await axios.post(
+        `${API_BASE_URL}/`,
+        formData,
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+          withCredentials: true
+        }
+      );
+      onMinutaResponse(response.data);
     } catch (err) {
       console.error("Erro no upload/geração da minuta:", err);
       let errorMessage = "Falha ao conectar com o servidor ou gerar minuta.";
