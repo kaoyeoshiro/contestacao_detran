@@ -1,20 +1,21 @@
 # ... outros imports no topo
-from flask import Flask, request, jsonify, session # Adicione jsonify
-from flask_session import Session # Você já tem isso
-from flask_cors import CORS # NOVO: Importar Flask-CORS
+from flask import (
+    Flask,
+    request,
+    jsonify,
+    session,
+    redirect,
+    url_for,
+    make_response,
+    g,
+)
+from flask_session import Session
+from flask_cors import CORS
 # ... resto dos seus imports
-
-app = Flask(__name__)
-CORS(app) # NOVO: Habilita CORS para todas as rotas para desenvolvimento.
-          # Em produção, restrinja as origens:
-          # CORS(app, resources={r"/api/*": {"origins": "https://seudominiofrontend.com"}})
-          # Se suas rotas de API começarem com /api/, por exemplo. Ou apenas "/" se for o caso.
 
 import os
 import fitz  # PyMuPDF
 import google.generativeai as genai
-from flask import Flask, request, redirect, url_for, make_response, session, g
-from flask_session import Session # NOVO: Importar Flask-Session
 from werkzeug.utils import secure_filename
 # import tempfile # Não será mais necessário para o texto_pdfs_original na sessão
 import logging
@@ -30,6 +31,7 @@ logger = logging.getLogger(__name__)
 
 # --- Configuração Inicial ---
 app = Flask(__name__)
+CORS(app)  # Habilita CORS para todas as rotas em desenvolvimento
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', os.urandom(32)) # Importante para assinar o cookie de ID
 
 # --- Configuração do Flask-Session (Sessões no Lado do Servidor) ---
