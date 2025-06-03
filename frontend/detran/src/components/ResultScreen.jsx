@@ -101,10 +101,18 @@ const ResultScreen = ({
       params.append('action', 'ajustar_minuta');
       params.append('instrucoes_ajuste', ajusteInstrucoes);
 
-      
-      onMinutaAdjusted(response.data); 
-      if(response.data.success) {
-        setAjusteInstrucoes(''); 
+      const response = await axios.post(
+        `${API_BASE_URL}/`,
+        params,
+        {
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          withCredentials: true
+        }
+      );
+
+      onMinutaAdjusted(response.data);
+      if (response.data.success) {
+        setAjusteInstrucoes('');
       }
 
     } catch (err) {
