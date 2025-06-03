@@ -89,6 +89,7 @@ O projeto é dividido em duas pastas principais:
 ## ▶️ Executando a Aplicação
 
 Você precisará de dois terminais abertos para rodar o backend e o frontend simultaneamente.
+Caso esteja no Windows e prefira um comando único, utilize o script `start_all.bat` (na raiz do projeto) que abre ambos automaticamente.
 
 1.  **Inicie o Servidor Backend (Flask):**
     * No terminal, na pasta `backend/` e com o ambiente virtual ativado:
@@ -109,6 +110,9 @@ Você precisará de dois terminais abertos para rodar o backend e o frontend sim
 
 3.  **Acesse a Aplicação:**
     * Abra a URL do frontend (ex: `http://localhost:5173`) no seu navegador.
+
+### Execução rápida no Windows
+Caso tenha as dependências instaladas, basta rodar `start_all.bat` para iniciar backend e frontend em janelas separadas.
 
 ## 🎨 Design e Estilo
 * O frontend utiliza um tema escuro inspirado na referência visual fornecida.
