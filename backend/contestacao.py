@@ -31,9 +31,7 @@ logger = logging.getLogger(__name__)
 
 # --- Configuração Inicial ---
 app = Flask(__name__)
-# Permite o envio de cookies de sessão para clientes frontend
-CORS(app, supports_credentials=True)
-app.secret_key = os.environ.get('FLASK_SECRET_KEY', os.urandom(32)) # Importante para assinar o cookie de ID
+
 
 # --- Configuração do Flask-Session (Sessões no Lado do Servidor) ---
 app.config['SESSION_TYPE'] = 'filesystem'  # Armazena sessões no sistema de arquivos
@@ -242,7 +240,7 @@ Elabore pedidos **abrangentes e fundamentados**:
 - Títulos e subtítulos claramente hierarquizados
 - Numeração sequencial dos argumentos principais
 - Citações em formatação adequada
-- Referencias bibliográficas completas
+- Referências bibliográficas completas
 - Linguagem jurídica formal, técnica e erudita
 
 ### **CONTROLE DE QUALIDADE:**
