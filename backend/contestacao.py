@@ -31,8 +31,7 @@ logger = logging.getLogger(__name__)
 
 # --- Configuração Inicial ---
 app = Flask(__name__)
-app.secret_key = os.environ.get('FLASK_SECRET_KEY', os.urandom(32))  # Importante para assinar o cookie de ID
-CORS(app)  # Habilita CORS para todas as rotas em desenvolvimento
+
 
 # --- Configuração do Flask-Session (Sessões no Lado do Servidor) ---
 app.config['SESSION_TYPE'] = 'filesystem'  # Armazena sessões no sistema de arquivos
